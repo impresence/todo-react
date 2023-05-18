@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import Form from './components/Form'
+import List from './components/List'
+import Header from './components/Header'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    const [task, setTask] = useState(
+        JSON.parse(localStorage.getItem('task')) || []
+    )
+
+    useEffect(() => {
+        localStorage.setItem('task',JSON.stringify(task))
+    },[task])
+
+    return (
+    <div className="flex h-screen items-center flex-col border bg-cyan-50">
+        <Header />
+        <Form task={task} setTask={setTask}/>
+        <List task={task} setTask={setTask} />
     </div>
   );
 }
