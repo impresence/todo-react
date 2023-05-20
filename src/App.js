@@ -13,7 +13,7 @@ function App() {
     },[task])
 
     return (
-    <div className="flex h-screen items-center flex-col border bg-cyan-50">
+    <div className="flex h-full items-center flex-col">
         <Header />
         <Form task={task} setTask={setTask}/>
         <List task={task} setTask={setTask} />

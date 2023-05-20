@@ -24,7 +24,7 @@ export default function Form({task, setTask}) {
         }
     setValue('')
     }
-
+// Сделать форму с onSubmit
 
     return (
         <div className='flex flex-col'>
@@ -36,19 +36,22 @@ export default function Form({task, setTask}) {
                 Clear list
             </button>
             : 
-            null}       
-            <input 
-            value={value} 
-            onChange={(e) => setValue(e.target.value)} 
-            className="bg-indigo-100 p-1.5 rounded-lg"
-            placeholder="Type your task here..." 
-            type="text" 
-            />
-            <button 
-            onClick={addTask} 
-            className="btn px-4 py-1.5 bg-fuchsia-100 hover:bg-fuchsia-200 rounded-lg">
-                Add Task
-            </button>
+            null}
+            <form className='flex flex-col justify-center' action="#">      
+                <input 
+                value={value} 
+                onChange={(e) => setValue(e.target.value)} 
+                className="bg-indigo-100 p-1.5 rounded-lg"
+                placeholder="Type your task here..." 
+                type="text" 
+                />
+                <br />
+                <button 
+                onClick={addTask} 
+                className="px-4 py-1.5 bg-fuchsia-100 hover:bg-fuchsia-200 rounded-lg">
+                    Add Task
+                </button>
+            </form>
         </div>
     )
 }

@@ -18,11 +18,12 @@ export default function List({task, setTask}) {
             })
             setTask(newTask)
         }
+
         return (
         <div style={{width:"576px"}}className=' flex flex-wrap max-w-xl' >
             {task.map(item => (
                 <div
-                className={item.isCompleted ? ' px-32 rounded-xl bg-green-100' : 'px-40 hover:ring-4 ring-green-300 rounded-xl'} key={item.id}>
+                className={item.isCompleted ? ' mb-2 px-32 rounded-xl bg-green-100' : ' mb-2 px-40 hover:ring-4 ring-green-300 rounded-xl'} key={item.id}>
                     <p>{item.title}</p>
                     <button 
                     className='bg-red-200' 
